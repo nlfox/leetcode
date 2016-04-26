@@ -1,5 +1,5 @@
-i=[]
-i.insert(0,1)
-print i
-i.insert(0,2)
-print i
+import math
+s=[]
+for i in xrange(10):
+    s.append(math.factorial(i))
+print s
