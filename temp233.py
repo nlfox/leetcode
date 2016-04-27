@@ -1,5 +1,1 @@
-import math
-s=[]
-for i in xrange(10):
-    s.append(math.factorial(i))
-print s
+print [1,2,3,4][1:2]
