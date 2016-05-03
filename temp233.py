@@ -1,2 +1,1 @@
-import pickle
-pickle.load('KGRwMQpTJ3B5dGhvbicKcDIKUydwaWNrbGVzJwpwMwpzUydzdWJ0bGUnCnA0ClMnaGludCcKcDUKc1MndXNlcicKcDYKTnMu')
+print [1,2,3][1:10]
