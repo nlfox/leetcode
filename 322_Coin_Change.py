@@ -1,29 +1,23 @@
 class Solution(object):
-
     def coinChange(self, coins, amount):
-
         """
-
         :type coins: List[int]
-
         :type amount: int
-
         :rtype: int
-
         """
-
-        d = [-1 for i in xrange(amount)]
-
+        max = float("inf")
+        if not amount:
+            return 0
+        d = [max for i in xrange(amount + 1)]
+        d[0] = 1
         for i in coins:
+            if i < amount:
+                d[i] = 1
+        for i in xrange(1, amount + 1):
+            ls = [1 + d[i - j] if i > j else max for j in coins]
+            d[i] = min(ls)
 
-            d[i] = 1
+        return d[amount] if d[amount] != max else -1
 
-        for i in xrange(1,amount+1):
 
-            for j in xrange(1,i):
-
-                if d[j] < 0:
-
-                    continue
-
-                d[j] = min(d[j],d[j]+d[i-j])
+print Solution().coinChange([1, 2, 5], amount=11)
