@@ -16,11 +16,10 @@ class Solution(object):
         flag = False
         for i in startList:
             if matrix[i][rowLen - 1] < target:
-                startList[i] = "-1"
+                startList[i] = -1
                 flag = True
         if flag:
             startList.remove(-1)
-        print startList
         for i in startList:
             low = 0
             high = rowLen - 1
