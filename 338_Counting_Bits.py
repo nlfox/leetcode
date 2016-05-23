@@ -4,7 +4,7 @@ class Solution(object):
         :type num: int
         :rtype: List[int]
         """
-        res=[]
+        res = []
         for i in xrange(num):
             res.append(bin(i)[2:].count('1'))
         return res
