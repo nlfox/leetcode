@@ -8,4 +8,4 @@ class Solution(object):
         return 0
 
 
-print Solution().hIndex([3, 0, 6, 1, 5,4,4])
+print Solution().hIndex([3, 0, 6, 1, 5, 4, 4])
