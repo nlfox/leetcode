@@ -13,4 +13,4 @@ class Solution(object):
         return d[-1]
 
 
-print Solution().wordBreak("bb",["a","b","bbb","bbbb"])
+print Solution().wordBreak("bb",[])
