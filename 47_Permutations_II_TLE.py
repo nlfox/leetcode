@@ -4,7 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-
         self.nums = nums
         self.numLen = len(nums)
         self.res = []
