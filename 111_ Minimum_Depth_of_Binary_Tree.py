@@ -27,3 +27,4 @@ class Solution(object):
             self.minRec(node.left, num + 1)
         else:
             self.minD = min(self.minD, num + 1)
+            
