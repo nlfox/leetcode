@@ -36,4 +36,4 @@ class Stack(object):
         """
         :rtype: bool
         """
-        return True if self.s1 == [] else Fal
+        return True if self.s1 == [] else False
