@@ -23,4 +23,3 @@ class Solution(object):
             self.dfs(node.left, level + 1)
         if node.right:
             self.dfs(node.right, level + 1)
-
