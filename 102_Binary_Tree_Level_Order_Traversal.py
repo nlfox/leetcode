@@ -6,7 +6,7 @@
 #         self.right = None
 
 class Solution(object):
-    def levelOrderBottom(self, root):
+    def levelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
@@ -25,4 +25,4 @@ class Solution(object):
                 q.append((node.left, level + 1))
             if node.right:
                 q.append((node.right, level + 1))
-        return [res[i] for i in xrange(len(res))][::-1]
+        return [res[i] for i in xrange(len(res))]
