@@ -1,27 +1,16 @@
 class Solution(object):
-    def uniquePathsWithObstacles(self, obstacleGrid):
+    def uniquePaths(self, m, n):
         """
-        :type obstacleGrid: List[List[int]]
+        :type m: int
+        :type n: int
         :rtype: int
         """
-        m = len(obstacleGrid[0])
-        n = len(obstacleGrid)
-        mat = [[0 for j in xrange(m + 1)] for i in xrange(n + 1)]
-        if obstacleGrid[-1][-1]==1:
-            return 0
-        mat[1][1]=1
-        for i in xrange(1, n + 1):
-            for j in xrange(1, m + 1):
-                if not obstacleGrid[i - 2][j - 1]:
-                    mat[i][j] += mat[i - 1][j]
-                if not obstacleGrid[i - 1][j - 2]:
-                    mat[i][j] += mat[i][j - 1]
 
-        return mat[n][m]
-
-
-print Solution().uniquePathsWithObstacles([
-    [0, 1, 0],
-    [0, 1, 0],
-    [0, 1, 0]
-])
+        d = [[0 for j in xrange(n)] for i in xrange(m)]
+        d[0][0] = 1
+        chk = lambda i,j:0 if (i < 0 or j< 0 or i==m or j==n) else d[i][j]
+        for i in xrange(m):
+            for j in xrange(n):
+                if not (i==0 and j==0):
+                    d[i][j] = chk(i-1,j) + chk(i,j-1)
+        return d[-1][-1]
