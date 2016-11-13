@@ -4,17 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        num_len = len(nums)
-        resList = []
-        for i in xrange(num_len):
-            n = nums[i]
-            c = 1
-            for j in xrange(i, num_len):
-                if nums[j] > n:
-                    c += 1
-                    n = nums[j]
-            resList.append(c)
-        return max(resList)
-
-
-print Solution().lengthOfLIS([10, 9, 2, 5, 3, 4])
+        if not nums:
+            return 0
+        n = len(nums)
+        d = [0] * n
+        for i in xrange(n):
+            xr = filter(lambda a: nums[a] < nums[i], xrange(i))
+            if xr:
+                d[i] = max([d[k] for k in xr]) + 1
+            else:
+                d[i] = 1
+        return max(d)
